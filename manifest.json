@@ -2,18 +2,18 @@
   "name": "+1 Junk Clicker",
   "short_name": "JunkClicker",
   "description": "A fun clicker game where you click on junk food!",
-  "start_url": "/index.html",
+  "start_url": "https://techdrips.github.io/-1-hckicker/index.html",
   "display": "standalone",
   "background_color": "#004400",
   "theme_color": "#004400",
   "icons": [
     {
-      "src": "icons/icon-192x192.png",
+      "src": "icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icons/icon-512x512.png",
+      "src": "icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
