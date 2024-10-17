@@ -1,52 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>+1 Junk Clicker</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="app.js"></script>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#004400">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>+1 Junk Clicker</title>
+
+  <!-- Link to manifest.json -->
+  <link rel="manifest" href="/-1-hckicker/manifest.json">
+  <link rel="stylesheet" href="/-1-hckicker/styles.css">
+
+  <!-- Link to app icons (optional for browsers) -->
+  <link rel="icon" sizes="192x192" href="/-1-hckicker/icon-192x192.png">
+  <link rel="icon" sizes="512x512" href="/-1-hckicker/icon-512x512.png">
 </head>
 <body>
-    <div id="content">
-        <h1>Welcome to +1 Junk Clicker!</h1>
-        <p>Click below to add the game to your home screen and play!</p>
-        <button id="startGame">Click me for an alert!</button>
-    </div>
 
-    <div id="game" style="display: none;">
-        <div id="score-board">
-            <h2>+1 Junk Clicker</h2>
-            <p>Points: <span id="points">0</span></p>
-        </div>
-        <div id="click-area">
-            <img id="junk-item" src="dorito.png" alt="Dorito to click">
-        </div>
-    </div>
+<h1>Welcome to +1 Junk Clicker</h1>
+<p>Click below to add the game to your home screen.</p>
+<button id="alertBtn">Click me for an alert!</button>
 
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').then(registration => {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, err => {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
-        }
+<!-- The clicker game -->
+<div id="clicker">
+  <div id="pointsDisplay">Points: 0</div>
+</div>
 
-        window.addEventListener('load', function() {
-            if (window.matchMedia('(display-mode: standalone)').matches) {
-                document.getElementById('content').style.display = 'none';
-                document.getElementById('game').style.display = 'block';
-            } else {
-                document.getElementById('startGame').addEventListener('click', () => {
-                    alert('You can add this site to your home screen to play the game!');
-                });
-            }
-        });
-    </script>
+<script src="/-1-hckicker/app.js"></script>
+<script>
+  // Alert button event
+  document.getElementById('alertBtn').addEventListener('click', function() {
+    alert('You clicked the alert button!');
+  });
+
+  // Service Worker registration
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/-1-hckicker/sw.js').then(function(registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+</script>
+
 </body>
 </html>
