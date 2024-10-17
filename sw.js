@@ -1,15 +1,15 @@
 const CACHE_NAME = "junk-clicker-cache-v1";
 const urlsToCache = [
-    "/",
-    "/index.html",
-    "/styles.css",
-    "/app.js",
-    "/images/dorito.png",
-    "/images/burger.png",
-    "/images/pizza.png",
-    "/images/fries.png",
-    "/icons/icon-192x192.png",
-    "/icons/icon-512x512.png"
+    "/-1-hckicker/",
+    "/-1-hckicker/index.html",
+    "/-1-hckicker/styles.css",
+    "/-1-hckicker/app.js",
+    "/-1-hckicker/dorito.png",
+    "/-1-hckicker/burger.png",
+    "/-1-hckicker/pizza.png",
+    "/-1-hckicker/fries.png",
+    "/-1-hckicker/icon-192x192.png",
+    "/-1-hckicker/icon-512x512.png"
 ];
 
 self.addEventListener("install", event => {
