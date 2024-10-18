@@ -1,39 +1,34 @@
+/* General page styling */
 body {
-  font-family: Arial, sans-serif;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff;
   margin: 0;
-  padding: 0;
-  background-color: powderblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  padding: 20px;
 }
 
-#content {
-  text-align: center;
+h1 {
+  color: #333;
 }
 
-#game {
-  text-align: center;
-  background-color: darkgreen;
-  height: 100vh;
-  width: 100vw;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#click-area {
-  margin-top: 20px;
-}
-
-#click-area img {
-  width: 150px;
+#clicker {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 20px;
+  border: 2px solid #333;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
-#score-board {
-  font-size: 24px;
+#clicker img {
+  display: block;
+  margin: 0 auto;
+}
+
+#pointsDisplay {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #555;
 }
