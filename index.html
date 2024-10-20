@@ -17,21 +17,19 @@
 <body>
 
 <h1>Welcome to +1 Junk Clicker</h1>
-<p>Click below to add the game to your home screen.</p>
-<button id="alertBtn">Click me for an alert!</button>
 
-<!-- The clicker game -->
-<div id="clicker">
+<!-- Message for adding the app to the home screen -->
+<div id="addToHomeScreen">
+  <p>This game works best as a Progressive Web App. Please add it to your home screen to play.</p>
+</div>
+
+<!-- The clicker game (initially hidden on the website) -->
+<div id="clicker" style="display: none;">
   <div id="pointsDisplay">Points: 0</div>
 </div>
 
 <script src="/-1-hckicker/app.js"></script>
 <script>
-  // Alert button event
-  document.getElementById('alertBtn').addEventListener('click', function() {
-    alert('You clicked the alert button!');
-  });
-
   // Service Worker registration
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
