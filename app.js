@@ -77,6 +77,27 @@ function startGame() {
     }, 1000);  // Update every second
   }
 }
+// Function to check if the app is in standalone mode
+function isStandalone() {
+  return (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone);
+}
+
+// Once the document is loaded, check if the app is in standalone mode
+document.addEventListener('DOMContentLoaded', function() {
+  const clickerGame = document.getElementById('clicker');
+  const addToHomeScreenMsg = document.getElementById('addToHomeScreen');
+
+  if (isStandalone()) {
+    // App is running as a standalone PWA, show the game and hide the message
+    clickerGame.style.display = 'block';  // Make sure the game is visible in PWA mode
+    addToHomeScreenMsg.style.display = 'none';  // Hide the "Add to Home Screen" message
+  } else {
+    // App is running in a browser, hide the game fully and show the add-to-home-screen message
+    clickerGame.style.display = 'none';  // Ensure the game is completely hidden
+    addToHomeScreenMsg.style.display = 'block';  // Show the message to prompt installation
+  }
+});
+
 
 // Start game when the user clicks for the first time
 document.getElementById('clicker').addEventListener('click', startGame);
