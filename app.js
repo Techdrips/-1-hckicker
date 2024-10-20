@@ -1,3 +1,24 @@
+// Function to check if the app is in standalone mode
+function isStandalone() {
+  return (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone);
+}
+
+// If the app is running in standalone mode, show the game. Otherwise, hide it.
+document.addEventListener('DOMContentLoaded', function() {
+  const clickerGame = document.getElementById('clicker');
+  const addToHomeScreenMsg = document.getElementById('addToHomeScreen');
+
+  if (isStandalone()) {
+    // App is running as a standalone PWA, show the game and hide the message
+    clickerGame.style.display = 'block';
+    addToHomeScreenMsg.style.display = 'none';
+  } else {
+    // App is running in a browser, show the add to home screen message and hide the game
+    clickerGame.style.display = 'none';
+    addToHomeScreenMsg.style.display = 'block';
+  }
+});
+
 // Game variables
 let points = 0;
 const junkItems = [
